@@ -1,0 +1,759 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="styles/stylesheet.css">
+    <title>Gnomes Things</title>
+  </head>
+  <body>
+
+  <audio id="player"></audio>
+  <div id="leftbar"><div id="leftbartext"></div></div>
+  <div id="rightbar"><div id="rightbartext"></div></div>
+    <div id="topbar"><div id="topbartext"></div></div>
+    
+    
+    <div id="maincontainer">
+        
+        
+
+        <div id="centerbar">
+            <button id="thebutton" onclick="mystart()">Start</button>
+            
+            <div id="topspacer" style="display: none"></div>
+            <div id="credits">
+            Credits <br> Song: Daft Punk - Harder better faster stronger. <br>
+                font: Daft Font, from: MatreroG <br>
+                Everything else is me :D <br> View the code on my <a href="https://github.com/Gnomeslayer/daft">Github</a> <br>
+                View the video version <a href="https://youtu.be/y-q-BY74Nws">here</a><br>
+            As I am too lazy to make this look good and work on mobile it's recommended that mobile users watch the video.</div>
+                <div id="centertextdiva"></div>
+        </div>
+        <div id="bottombar"><div id="bottombartext"></div></div>
+</div>
+    
+  </body>
+
+  <script type="application/javascript">
+
+        var lyriccounter = 0;
+        var barcounter = 0;
+        var audioFiles = ["audio/daft.mp3"];
+        var mybutton = document.getElementById("thebutton");
+        var topbarcounter = 0;
+        var bottombarcounter = 0;
+        var rightbarcounter = 0;
+        var leftbarcounter = 0;
+        mybutton.style.display = "none";
+
+        function preloadAudio(url) 
+        {
+            var audio = new Audio();
+            // once this file loads, it will call loadedAudio()
+            // the file will be kept by the browser as cache
+            audio.addEventListener('canplaythrough', loadedAudio, false);
+            audio.src = url;
+        }
+
+        var loaded = 0;
+
+        function loadedAudio() 
+        {
+                // this will be called every time an audio file is loaded
+                // we keep track of the loaded files vs the requested files
+                loaded++;
+                if (loaded == audioFiles.length){
+                    // all have loaded
+                    init();
+                }
+        }
+
+        var player = document.getElementById('player');
+
+        function play(index) 
+        {
+            player.src = audioFiles[index];
+            player.play();
+        }
+
+        async function init() 
+        {
+            // do your stuff here, audio has been loaded
+            await sleep(5000);
+            mybutton.style.display = "block";
+            
+        }
+
+        // we start preloading all the audio files
+        for (var i in audioFiles) 
+        {
+            preloadAudio(audioFiles[i]);
+            
+        }
+
+        function sleep(ms) 
+        {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        var topbar = document.getElementById("topbartext");
+        var leftbar = document.getElementById("leftbartext");
+        var bottombar = document.getElementById("bottombartext");
+        var rightbar = document.getElementById("rightbartext");
+
+
+        var maintext = document.getElementById("centertextdiva");
+        
+
+        async function mydisplay(lyrics)
+        {
+            var old1 = maintext.innerHTML;
+
+            maintext.innerHTML = lyrics.toUpperCase();
+
+            if(old1)
+            {
+                if(lyriccounter == 4)
+                {
+                    lyriccounter = 0;
+                    barcounter++;
+                }
+                if(barcounter == 4)
+                {
+                    barcounter = 0;
+                }
+
+                if(barcounter == 0)
+                {
+                    topbar.innerHTML += old1 + ", ";
+                    lyriccounter++;
+                }else if(barcounter == 1)
+                {
+                    rightbar.innerHTML += old1 + ", ";
+                    lyriccounter++;
+                }else if(barcounter == 2)
+                {
+                    bottombar.innerHTML += old1 + ", ";
+                    lyriccounter++;
+                }else if(barcounter == 3)
+                {
+                    leftbar.innerHTML += old1 + ", ";
+                    lyriccounter++;
+                }
+            }
+            
+        }
+
+        async function center()
+        {
+            await sleep(51500);
+
+            mydisplay("Work it");
+            await sleep(1000);
+            mydisplay("Make it");
+            await sleep(1000);
+            mydisplay("Do it");
+            await sleep(1000);
+            mydisplay("Makes Us");
+            await sleep(5500);
+
+            mydisplay("Harder");
+            await sleep(1000);
+            mydisplay("Better");
+            await sleep(1000);
+            mydisplay("Faster");
+            await sleep(1000);
+            mydisplay("Stronger");
+            await sleep(4000);
+
+            mydisplay("More than");
+            await sleep(1000);
+            mydisplay("Hour");
+            await sleep(1000);
+            mydisplay("Our");
+            await sleep(1000);
+            mydisplay("Never");
+            await sleep(5000);
+
+            mydisplay("Ever");
+            await sleep(1000);
+            mydisplay("After");
+            await sleep(1000);
+            mydisplay("Work is");
+            await sleep(1000);
+            mydisplay("Over");
+            await sleep(4300);
+
+            mydisplay("Work it");
+            await sleep(1000);
+            mydisplay("Make it");
+            await sleep(1000);
+            mydisplay("Do it");
+            await sleep(1000);
+            mydisplay("Makes us");
+            await sleep(5900);
+
+
+            mydisplay("Harder");
+            await sleep(1000);
+            mydisplay("Better");
+            await sleep(1000);
+            mydisplay("Faster");
+            await sleep(1000);
+            mydisplay("Stronger");
+            await sleep(4000);
+
+            mydisplay("Work it");
+            await sleep(500);
+            mydisplay("Harder");
+            await sleep(500);
+            mydisplay("Make it");
+            await sleep(500);
+            mydisplay("Better");
+            await sleep(500);
+
+            mydisplay("Do it");
+            await sleep(500);
+            mydisplay("Faster");
+            await sleep(500);
+            mydisplay("Makes Us");
+            await sleep(500);
+            mydisplay("Stronger");
+            await sleep(4000);
+
+            mydisplay("More than");
+            await sleep(750);
+            mydisplay("Ever");
+            await sleep(650);
+            mydisplay("Hour After");
+            await sleep(850);
+            mydisplay("Our");
+            await sleep(550);
+
+            mydisplay("Work is");
+            await sleep(500);
+            mydisplay("Never over");
+            await sleep(4500);
+
+            /*
+            ------------------
+            ------------------
+            ------------------
+            */
+           
+            mydisplay("Work it");
+            await sleep(500);
+            mydisplay("Harder");
+            await sleep(500);
+            mydisplay("Make it");
+            await sleep(500);
+            mydisplay("Better");
+            await sleep(500);
+
+            mydisplay("Do it");
+            await sleep(500);
+            mydisplay("Faster");
+            await sleep(500);
+            mydisplay("Makes Us");
+            await sleep(500);
+            mydisplay("Stronger");
+            await sleep(500);
+
+            mydisplay("More than");
+            await sleep(500);
+            mydisplay("Ever");
+            await sleep(500);
+            mydisplay("Hour After");
+            await sleep(750);
+            mydisplay("Our");
+            await sleep(550);
+
+            mydisplay("Work is");
+            await sleep(500);
+            mydisplay("Never over");
+            await sleep(750);
+
+            /*
+            ------------------
+            ------------------
+            ------------------
+            */
+           
+            mydisplay("Work it");
+            await sleep(500);
+            mydisplay("Harder");
+            await sleep(500);
+            mydisplay("Make it");
+            await sleep(500);
+            mydisplay("Better");
+            await sleep(500);
+
+            mydisplay("Do it");
+            await sleep(500);
+            mydisplay("Faster");
+            await sleep(500);
+            mydisplay("Makes Us");
+            await sleep(500);
+            mydisplay("Stronger");
+            await sleep(500);
+
+            mydisplay("More than");
+            await sleep(500);
+            mydisplay("Ever");
+            await sleep(500);
+            mydisplay("Hour After");
+            await sleep(750);
+            mydisplay("Our");
+            await sleep(550);
+
+            mydisplay("Work is");
+            await sleep(500);
+            mydisplay("Never over");
+            await sleep(850);
+
+            /*
+            ------------------
+            ------------------
+            ------------------
+            */
+           
+            mydisplay("Work it");
+            await sleep(500);
+            mydisplay("Harder");
+            await sleep(500);
+            mydisplay("Make it");
+            await sleep(500);
+            mydisplay("Better");
+            await sleep(500);
+
+            mydisplay("Do it");
+            await sleep(500);
+            mydisplay("Faster");
+            await sleep(500);
+            mydisplay("Makes Us");
+            await sleep(500);
+            mydisplay("Stronger");
+            await sleep(500);
+
+            mydisplay("More than");
+            await sleep(500);
+            mydisplay("Ever");
+            await sleep(500);
+            mydisplay("Hour After");
+            await sleep(750);
+            mydisplay("Our");
+            await sleep(550);
+
+            mydisplay("Work is");
+            await sleep(500);
+            mydisplay("Never over");
+            await sleep(850);
+
+            /*
+            ------------------
+            ------------------
+            ------------------
+            */
+
+            mydisplay("Work it");
+            await sleep(500);
+            mydisplay("Harder");
+            await sleep(500);
+            mydisplay("Make it");
+            await sleep(500);
+            mydisplay("Better");
+            await sleep(500);
+
+            mydisplay("Do it");
+            await sleep(500);
+            mydisplay("Faster");
+            await sleep(500);
+            mydisplay("Makes Us");
+            await sleep(500);
+            mydisplay("Stronger");
+            await sleep(500);
+
+            mydisplay("More than");
+            await sleep(500);
+            mydisplay("Ever");
+            await sleep(500);
+            mydisplay("Hour After");
+            await sleep(750);
+            mydisplay("Our");
+            await sleep(550);
+
+            mydisplay("Work is");
+            await sleep(500);
+            mydisplay("Never over");
+            await sleep(900);
+
+            /*
+            ------------------
+            ------------------
+            ------------------
+            */
+
+            mydisplay("Work it");
+            await sleep(480);
+            mydisplay("Harder");
+            await sleep(480);
+            mydisplay("Make it");
+            await sleep(480);
+            mydisplay("Better");
+            await sleep(480);
+
+            mydisplay("Do it");
+            await sleep(480);
+            mydisplay("Faster");
+            await sleep(480);
+            mydisplay("Makes Us");
+            await sleep(480);
+            mydisplay("Stronger");
+            await sleep(480);
+
+            mydisplay("More than");
+            await sleep(480);
+            mydisplay("Ever");
+            await sleep(480);
+            mydisplay("Hour After");
+            await sleep(850);
+            mydisplay("Our");
+            await sleep(550);
+
+            mydisplay("Work is");
+            await sleep(480);
+            mydisplay("Never over");
+            await sleep(800);
+            /*
+            ------------------
+            ------------------
+            ------------------
+            */
+
+            mydisplay("Work it");
+            await sleep(500);
+            mydisplay("Harder");
+            await sleep(500);
+            mydisplay("Make it");
+            await sleep(500);
+            mydisplay("Better");
+            await sleep(500);
+
+            mydisplay("Do it");
+            await sleep(500);
+            mydisplay("Faster");
+            await sleep(500);
+            mydisplay("Makes Us");
+            await sleep(500);
+            mydisplay("Stronger");
+            await sleep(500);
+
+            mydisplay("More than");
+            await sleep(500);
+            mydisplay("Ever");
+            await sleep(500);
+            mydisplay("Hour After");
+            await sleep(850);
+            mydisplay("Our");
+            await sleep(550);
+
+            mydisplay("Work is");
+            await sleep(500);
+            mydisplay("Never over");
+            await sleep(8650);
+
+		/*
+            -----------------------
+            -----------------------
+            -----------------------
+            -----------------------
+            */
+            mydisplay("Work it");
+            await sleep(500);
+
+            mydisplay("harder");
+            await sleep(500);
+
+            mydisplay("make it");
+            await sleep(750);
+
+            mydisplay("Do it");
+            await sleep(500);
+
+            mydisplay("Faster");
+            await sleep(500);
+
+            mydisplay("makes us");
+            await sleep(750);
+
+            mydisplay("More than");
+            await sleep(650);
+
+            mydisplay("ever");
+            await sleep(650);
+
+            mydisplay("Hour after");
+            await sleep(750);
+            mydisplay("Our");
+            await sleep(500);
+
+            mydisplay("Work is");
+            await sleep(750);
+            mydisplay("Never over");
+            await sleep(850);
+
+            /*
+            -----------------------
+            -----------------------
+            -----------------------
+            -----------------------
+            */
+            mydisplay("Work it");
+            await sleep(475);
+
+            mydisplay("harder");
+            await sleep(475);
+
+            mydisplay("make it");
+            await sleep(475);
+
+            mydisplay("better");
+            await sleep(475);
+
+            mydisplay("Do it");
+            await sleep(475);
+
+            mydisplay("Faster");
+            await sleep(475);
+
+            mydisplay("makes us");
+            await sleep(475);
+
+            mydisplay("stronger");
+            await sleep(475);
+
+            mydisplay("More than");
+            await sleep(475);
+
+            mydisplay("ever");
+            await sleep(475);
+
+            mydisplay("Hour after");
+            await sleep(725);
+            mydisplay("Our");
+            await sleep(475);
+
+            mydisplay("Work is");
+            await sleep(625);
+            mydisplay("Never over");
+            await sleep(850);
+
+            /*
+            -----------------------
+            -----------------------
+            -----------------------
+            -----------------------
+            */
+            mydisplay("Work it");
+            await sleep(950);
+
+            mydisplay("make it");
+            await sleep(475);
+
+            mydisplay("better");
+            await sleep(475);
+
+            mydisplay("Do it");
+            await sleep(475);
+
+            mydisplay("Faster");
+            await sleep(475);
+
+            mydisplay("makes us");
+            await sleep(475);
+
+            mydisplay("stronger");
+            await sleep(475);
+
+            mydisplay("More than");
+            await sleep(475);
+
+            mydisplay("ever");
+            await sleep(475);
+
+            mydisplay("Hour after");
+            await sleep(850);
+            mydisplay("Our");
+            await sleep(500);
+
+            mydisplay("Work is");
+            await sleep(750);
+            mydisplay("Never over");
+            await sleep(850);
+
+            /*
+            -----------------------
+            -----------------------
+            -----------------------
+            -----------------------
+            */
+            mydisplay("Work it");
+            await sleep(475);
+
+            mydisplay("harder");
+            await sleep(475);
+
+            mydisplay("make it");
+            await sleep(475);
+
+            mydisplay("better");
+            await sleep(475);
+
+            mydisplay("Do it");
+            await sleep(475);
+
+            mydisplay("Faster");
+            await sleep(475);
+
+            mydisplay("makes us");
+            await sleep(475);
+
+            mydisplay("stronger");
+            await sleep(475);
+
+            mydisplay("More than");
+            await sleep(475);
+
+            mydisplay("ever");
+            await sleep(475);
+
+            mydisplay("Hour after");
+            await sleep(850);
+            mydisplay("Our");
+            await sleep(500);
+
+            mydisplay("Work is");
+            await sleep(750);
+            mydisplay("Never over");
+            await sleep(850);
+
+
+            mydisplay("work it");
+            await sleep(450);
+            mydisplay("harder");
+            await sleep(450);
+
+            mydisplay("make it");
+            await sleep(450);
+            mydisplay("better");
+            await sleep(450);
+
+            mydisplay("do it");
+            await sleep(450);
+            mydisplay("faster");
+            await sleep(450);
+
+            mydisplay("makes us");
+            await sleep(450);
+            mydisplay("stronger");
+            await sleep(450);
+
+            mydisplay("more than");
+            await sleep(450);
+            mydisplay("ever");
+            await sleep(450);
+
+            mydisplay("Hour after");
+            await sleep(850);
+            mydisplay("Our");
+            await sleep(550);
+
+            mydisplay("work is");
+            await sleep(550);
+            mydisplay("never over");
+            await sleep(1200);
+
+            mydisplay("Work it");
+            await sleep(500);
+            mydisplay("harder");
+            await sleep(1500);
+
+            mydisplay("Do it");
+            await sleep(500);
+            mydisplay("faster");
+            await sleep(1500);
+
+            mydisplay("More than");
+            await sleep(500);
+            mydisplay("ever");
+            await sleep(1500);
+
+            mydisplay("Our work");
+            await sleep(700);
+
+            mydisplay("is never");
+            await sleep(700);
+            mydisplay("Over");
+            await sleep(500);
+
+            mydisplay("Work it");
+            await sleep(600);
+            mydisplay("harder");
+            await sleep(500);
+
+            mydisplay("Make it");
+            await sleep(500);
+            mydisplay("better");
+            await sleep(500);
+
+            mydisplay("Do it");
+            await sleep(500);
+            mydisplay("faster");
+            await sleep(500);
+
+            mydisplay("Makes us");
+            await sleep(500);
+            mydisplay("stronger");
+            await sleep(500);
+
+            mydisplay("More than");
+            await sleep(500);
+            mydisplay("ever");
+            await sleep(500);
+            mydisplay("Hour after")
+            await sleep(700);
+            mydisplay("Our work")
+            await sleep(700);
+            mydisplay("is never");
+            await sleep(500);
+            mydisplay("Over");
+
+        }
+        async function mystart()
+        {
+            var mybutton = document.getElementById("thebutton");
+            mybutton.style.display = "none";
+
+            var myspacer = document.getElementById("topspacer");
+            myspacer.style.display = "block";
+
+            var myaudio = document.getElementById("player");
+            
+            var mycredit = document.getElementById("credits");
+            mycredit.style.display = "none";
+            play(0);
+            //myaudio.currentTime = 167;
+            myaudio.volume = 0.75;
+            center();
+        }
+
+        function mystop()
+        {
+            var myaudio = document.getElementById("player");
+            myaudio.pause();
+        }
+    </script>
+
+</html>

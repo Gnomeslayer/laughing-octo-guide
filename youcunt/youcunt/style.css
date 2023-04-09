@@ -1,0 +1,115 @@
+body
+{
+	background-color: beige;
+	margin: 0;
+	border: 0;
+}
+
+#container
+{
+	border-color: red;
+	border-style: solid;
+	border-width: 1px;
+	
+	width: 75vw;
+	font-size: 2vw;
+	font-family: calibri;
+	margin: auto;
+	margin-top: 5vh;
+	
+	text-align: center;
+
+}
+
+.clouds {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+#cuntvideo_container
+{
+	position: absolute;
+	width: 100vw;
+}
+
+#cuntvideo
+{
+	width: 75vw;
+	height: 50vh;
+	margin-left: 25vw;
+}
+
+.firstCloud {
+  position: absolute;
+  left: 50px;
+  height: -150px;
+  animation: move 4s linear 0s infinite;
+  width: 150px;
+}
+
+.secondCloud {
+ position: absolute;
+  left: 150px;
+  height: -150px;
+  animation: move 7s linear 0s infinite;
+  width: 150px;
+  }
+
+.thirdCloud {
+ position: absolute;
+  left: 250px;
+  height: -150px;
+  animation: move 15s linear 0s infinite;
+  width: 150px;
+}
+
+@-webkit-keyframes move 
+{
+  from 
+	{
+	  top: -150px;
+	}
+  to 
+	{
+		top: 100vh;
+	}
+}
+
+
+#content
+{
+	
+	width: 75vw;
+	margin: auto;
+	margin-top: 15vh;
+	
+	text-align:  center;
+	font-size: 10vw;
+	font-weight: bold;
+	font-family: calibri;
+}
+
+
+#startbutton
+{
+	width: 50vw;
+	height: 30vh;
+	font-size:10vw;
+	font-weight: bold;
+	font-family: calibri;
+	margin: auto;
+	text-align: center;
+	
+	border:1px solid #CCC;
+	 background:#DDD;
+	 box-shadow: 0 0 5px 5px rgba(0,0,0,0.6);
+	padding-top: 2.5%;
+	cursor:pointer;
+}
+#startbutton:active {
+    color:red;
+    
+	box-shadow: 0 0 5px 2px rgba(0,0,0,0.6);
+}

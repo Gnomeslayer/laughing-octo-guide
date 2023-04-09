@@ -1,0 +1,132 @@
+@font-face {
+    font-family: 'myfont'; /*a name to be used later*/
+    src: url('daft.ttf'); /*URL to font*/
+}
+
+body{
+    margin: 0;
+    border: 0;
+    background-color: rgb(0, 0, 0);
+    
+    font-family: 'myfont';
+    overflow: hidden;
+}
+
+#credits
+{
+    width: 100%;
+    min-height: 10vh;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 1.5em;
+}
+button
+{
+    width: 100%;
+    min-height: 25%;
+    font-size: 5em;
+}
+
+#topspacer
+{
+    width: 100%;
+    min-height: 30vh;
+}
+
+#topbar
+{
+    width: 70vw;
+    min-height: 15vh;
+    max-height: 15vh;
+    margin: auto;
+}
+
+#leftbar
+{
+    width: 15vw;
+    min-height: 75vh;
+    float: left;
+    margin-top: 15vh;
+}
+
+#centerbar
+{
+    width: 70vw;
+    min-height: 70vh;
+    max-height: 70vh;
+    margin: auto;
+}
+
+#rightbar
+{
+    width: 15vw;
+    min-height: 75vh;
+    float: right;
+    margin-top: 15vh;
+}
+
+#bottombar
+{
+    width: 70vw;
+    min-height: 15vh;
+    max-height: 15vh;
+    margin: auto;
+}
+
+#maincontainer
+{
+    width: 100vw;
+    height: 80vh;
+}
+
+
+
+#bottombartext
+{
+    font-family: 'myfont';
+    font-size: 1.5em;
+    padding-left: 15px;
+    text-align: center;
+    color: rgba(190, 190, 190, 0.75);
+}
+
+#topbartext
+{
+    font-family: 'myfont';
+    font-size: 1.5em;
+    padding-left: 15px;
+    padding-top: 10px;
+    text-align: center;
+    color: rgba(190, 190, 190, 0.75);
+}
+
+#leftbartext
+{
+    font-family: 'myfont';
+    font-size: 1.5em;
+    text-align: center;
+    color: rgba(190, 190, 190, 0.75);
+}
+
+#rightbartext
+{
+    font-family: 'myfont';
+    font-size: 1.5em;
+    text-align: center;
+    color: rgba(190, 190, 190, 0.75);
+}
+
+
+
+#centertextdiva
+{
+    font-size: 6em;
+    text-align: center;
+    min-width: 100%;
+
+    line-height: 100px;
+    margin-bottom: 10px;
+
+    color: rgba(190, 190, 190, 1);
+}

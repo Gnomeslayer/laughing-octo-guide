@@ -1,0 +1,262 @@
+body
+{
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: rgb(3,3,3);
+	margin: 0px;
+	color: white;
+}
+
+
+
+.topnav{
+	width: 100%;
+	overflow: hidden;
+	border-bottom-color: rgb(75,75,75);
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	background-color: rgb(26,26,26);
+}
+
+
+.navcontainer
+{
+	width: 50%;
+	margin: auto;
+}
+
+.navcontainer a {
+	color: rgb(180,180,180);
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
+	float: left;
+  }
+  
+
+  .navcontainer a:hover {
+	background-color: rgb(50,50,50);
+	color: rgb(225,225,225);
+  }
+  
+  .navcontainer a.active {
+	background-color: rgb(75,75,75);
+	color: rgb(225,225,225);
+  }
+  
+.mainbody
+{
+	width: 90%;
+	margin: auto;
+	margin-top: 22px;
+	padding: 15px;
+}
+
+.sidebar
+{
+	width: 20%;
+	float: right;
+}
+
+.content
+{
+	width: 70%;
+	margin: auto;
+}
+
+.box
+{
+	width: 100%;
+	border-color: rgb(75,75,75);
+	border-style: solid;
+	border-width: 2px;
+	
+	background-color: rgb(26,26,26);
+	padding: 5px;
+	color: rgb(180,180,180);
+
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+}
+
+.box a
+{
+	color: rgb(80, 190, 255);
+}
+
+.boxcontent img
+{
+	width: 250px;
+	height: 250px;
+	border-color: white;
+	border-style: solid;
+	border-width: 2px;
+	margin: 2px;
+
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+}
+
+.boxtitle
+{
+	width: 100%;
+	margin: 0;
+	padding: 0px;
+	height: 40px;
+}
+.boxtitle h2
+{
+	margin: 3px;
+	float: left;
+	font-size: 1.5em;
+}
+
+.createnew
+{
+	float: right;
+}
+
+.imageupload
+{
+	width: 100%;
+}
+
+.imageupload input
+{
+	width: 50%;
+	font-size: 1.2em;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+
+	border-color: white;
+	border-width: 1px;
+	border-style: solid;
+}
+
+.imageupload a
+{
+	border-color: white;
+	border-width: 1px;
+	border-style: solid;
+
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+
+	background-color: rgb(75,75,75);
+	color: white;
+	text-decoration: none;
+	padding: 5px;
+
+	margin-left: 5px;
+}
+
+.formcontent
+{
+	background-color: rgb(62,62,62);
+	padding: 10px;
+
+	min-height: 75px;
+	min-width: 75%;
+	resize: both;
+	overflow: auto;
+	max-height: fit-content;
+	max-width: fit-content;
+
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+
+	border-color: white;
+	border-width: 1px;
+	border-style: solid;
+}
+
+.formtitle
+{
+	background-color: rgb(62,62,62);
+	padding: 10px;
+
+	min-width: fit-content;
+
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+
+	border-color: white;
+	border-width: 1px;
+	border-style: solid;
+}
+.formlink
+{
+	background-color: rgb(62,62,62);
+	padding: 10px;
+
+	min-width: fit-content;
+
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+
+	border-color: white;
+	border-width: 1px;
+	border-style: solid;
+}
+.formgithub
+{
+	background-color: rgb(62,62,62);
+	padding: 10px;
+
+	min-width: fit-content;
+
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+
+	border-color: white;
+	border-width: 1px;
+	border-style: solid;
+}
+
+.formimage
+{
+	width: 100%;
+	padding: 0px;
+}
+
+.button {
+    width: auto;
+    height: 50px;
+    margin-left: 5px;
+    padding: 5px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    border-color: white;
+    border-style: solid;
+    border-width: 1px;
+    background-color: rgb(62,62,62);
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 50px;
+}
+
+.edit, .delete
+{
+	float: right;
+}
+
+.github_button, .demo_button
+{
+	float: left;
+}
+
+.buttoncontainer
+{
+	min-width: fit-content;
+	min-height: 50px;
+}

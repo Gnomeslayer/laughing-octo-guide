@@ -1,0 +1,124 @@
+@font-face {
+    font-family: 'myfont'; /*a name to be used later*/
+    src: url('daft.ttf'); /*URL to font*/
+}
+
+body{
+    margin: 0;
+    border: 0;
+    background-color: rgb(0, 0, 0);
+    
+    font-family: 'myfont';
+    overflow: hidden;
+    color: rgb(161, 161, 161);
+}
+
+#credits
+{
+    width: 75vw;
+    min-height: 10vh;
+
+    color: rgb(161, 161, 161);
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+
+    font-size: 1.5em;
+
+    position: absolute;
+    margin-left: 15vw;
+    margin-top: 25vh;
+   
+}
+
+#budget
+{
+    width: 75vw;
+    min-height: 10vh;
+
+    color: rgb(161, 161, 161);
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 1.5em;
+
+    position: absolute;
+    margin-left: 15vw;
+    margin-top: 45vh;
+}
+
+.display-1s
+{
+    background-color: rgb(95, 95, 95);
+
+    transition: all 1s ease-out;
+    -moz-transition: all 1s ease-out;
+    -webkit-transition: all 1s  ease-out;
+}
+
+.display-05s
+{
+    background-color: rgb(95, 95, 95);
+
+    transition: all 0.4s ease-out;
+    -moz-transition: all 0.4s ease-out;
+    -webkit-transition: all 0.4s  ease-out;
+}
+
+#topleft
+{
+    width: 50vw;
+    min-height: 50vh;
+    max-height: 50vh;
+    float: left;
+    font-size: 5em;
+    line-height: 50vh;
+    text-align: center;
+    z-index: -1;
+}
+
+#bottomleft
+{
+    width: 50vw;
+    min-height: 50vh;
+    max-height: 50vh;
+    float: left;
+    font-size: 5em;
+    line-height: 50vh;
+    text-align: center;
+    z-index: -1;
+}
+
+#topright
+{
+    width: 50vw;
+    min-height: 50vh;
+    max-height: 50vh;
+    float: right;
+    font-size: 5em;
+    line-height: 50vh;
+    text-align: center;
+    z-index: -1;
+}
+
+#bottomright
+{
+    width: 50vw;
+    min-height: 50vh;
+    max-height: 50vh;
+    float: right;
+    font-size: 5em;
+    line-height: 50vh;
+    text-align: center;
+    z-index: -1;
+}
+
+
+
+
+.mybutton
+{
+    width: 30%;
+    min-height: 25%;
+    font-size: 5em;
+    margin: auto;
+}
+

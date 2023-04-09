@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>Type like Grace</title>
+	<link rel="stylesheet" href="style.css">
+	<script>
+	function randomIntFromInterval(min, max) 
+	{ // min and max included 
+		return Math.floor(Math.random() * (max - min + 1) + min)
+	}
+		function tograce()
+		{
+			var toGrace = document.getElementById("gracetext").value;
+			var MaxVal = document.getElementById("frequency").value;
+			res = toGrace.split('');
+			var RandNum_a = randomIntFromInterval(1,MaxVal);
+			var DisplayStuff = '';
+			
+			var dashprobability = randomIntFromInterval(1, 5);
+			
+			var myArrLength = res.length;
+			if(res[myArrLength - 1] == "-")
+			{
+				array.splice(myArrLength - 1, 1);
+			}
+			
+			for(i = 0; i < res.length; i++)
+			{
+				var RandNum_b = randomIntFromInterval(1,MaxVal);
+				if(RandNum_a == RandNum_b)
+				{
+					DisplayStuff = DisplayStuff + res[i].toUpperCase();
+				}else{
+					DisplayStuff = DisplayStuff + res[i];
+				}
+			}
+			
+			var dashprob = randomIntFromInterval(1, 5);
+			if(dashprob == dashprobability)
+			{
+				DisplayStuff = DisplayStuff + "-";
+			}
+			
+			var display = document.getElementById("display");
+			display.innerHTML = DisplayStuff;
+		}
+		
+		
+		
+
+		function copyDivToClipboard() {
+                    var range = document.createRange();
+                    range.selectNode(document.getElementById("display"));
+                    window.getSelection().removeAllRanges(); // clear current selection
+                    window.getSelection().addRange(range); // to select text
+                    document.execCommand("copy");
+                    window.getSelection().removeAllRanges();// to deselect
+					
+					var notify = document.getElementById("copiedtext");
+					notify.innerHTML = "Copied!";
+					notify.style.opacity = 1;
+					var fadeEffect = setInterval(function () {
+					if (!notify.style.opacity) {
+						notify.style.opacity = 1;
+					}
+					if (notify.style.opacity > 0) {
+						notify.style.opacity -= 0.1;
+					} else {
+						notify.innerHTML = "";
+						clearInterval(fadeEffect);
+					
+					}
+				}, 100);
+                }
+		
+		
+		async function startingtext()
+		{
+			var startingText = "Nothing better than being able to type like a Grace!";
+			var mySplit = startingText.split('');
+			var toGrace = document.getElementById("gracetext");
+			toGrace.disabled = true;
+			console.log(mySplit);
+			
+			
+			
+			for(var i = 0; i < mySplit.length; i++)
+			{
+				
+				toGrace.value = toGrace.value + mySplit[i];
+				tograce();
+				await new Promise(r => setTimeout(r, 100));
+			}
+			toGrace.disabled = false;
+		}
+		
+		function sleep(ms) 
+		{
+			return new Promise(resolve => setTimeout(resolve, ms));
+		}
+		
+		var mycheck = false;
+		function check()
+		{
+			if(mycheck === false)
+			{
+				var toGrace = document.getElementById("gracetext");
+				if(toGrace.disabled == false)
+				{
+					toGrace.value = '';
+					tograce();
+				}
+				mycheck = true;
+			}
+		}
+	</script>
+  </head>
+  <body onload="startingtext()">
+	<div id="container">
+		<div id="imgcont"><img src="gracepic.png"></div>
+		<div id="freqcont">Grace Frequency <input type="number" id="frequency" value="8"></input><br>(For best results use a low number!)</div> <br>
+		<h1>Start typing to produce your very own text that talks like Grace!</h1>
+		
+		<textarea  oninput="tograce()" id="gracetext" onclick="check()"></textarea><br>
+		<h1>Output! (Click to copy!) <div id="copiedtext" style="width: 10%; margin: auto;"></div></h1>
+	<div id="display" onclick="copyDivToClipboard()"></div>
+	</div>
+ </body>
+</html>
